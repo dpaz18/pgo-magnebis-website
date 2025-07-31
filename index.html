@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGO Magnebis Enterprises LLC - Construction & Storage Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ffffff, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0c4a6e 0%, #065f46 50%, #1e40af 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            background-size: cover;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(1px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.85;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: #0f172a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            animation: fadeInUp 1s ease-out 0.9s both;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(245, 158, 11, 0.6);
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #f1f5f9;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(45deg, #0ea5e9, #10b981);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .section-text h3 {
+            color: #f1f5f9;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Quote Button */
+        .quote-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .quote-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.6);
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slide {
+            display: none;
+            position: relative;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .slide-caption {
+            position: static;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 25px 30px;
+            text-align: left;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .slide-caption h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #fbbf24;
+        }
+
+        .slide-caption ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .slide-caption li {
+            margin-bottom: 4px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -30px;
+            padding: 20px 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.3s ease;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            user-select: none;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .next {
+            right: 10px;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+
+        /* Alternating Sections */
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, rgba(6, 95, 70, 0.2) 0%, rgba(15, 23, 42, 0.4) 100%);
+            backdrop-filter: blur(15px);
+        }
+
+        .section:nth-child(even) .section-content {
+            direction: ltr;
+        }
+
+        .section:nth-child(even) .section-text {
+            direction: ltr;
+        }
+
+        /* Wholesale Section */
+        .wholesale-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(12, 74, 110, 0.8) 0%, rgba(6, 95, 70, 0.8) 100%);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            position: relative;
+        }
+
+        .wholesale-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .wholesale-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .wholesale-card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 23, 42, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+
+        .wholesale-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .wholesale-quote-button {
+            grid-column: 2;
+            grid-row: 3;
+            justify-self: center;
+            align-self: start;
+            display: inline-block;
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+        }
+
+        .wholesale-quote-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.6);
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #fbbf24;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .slide img {
+                height: 450px;
+            }
+
+            .wholesale-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .wholesale-quote-button {
+                grid-column: auto;
+                grid-row: auto;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PGO Magnebis Enterprises LLC</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#warehouses">Warehouses</a></li>
+                        <li><a href="#storage">Storage</a></li>
+                        <li><a href="#wholesale">Wholesale</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>PGO Magnebis Enterprises LLC</h1>
+                <p class="hero-subtitle">Excellence in Construction & Storage Solutions</p>
+                <p class="hero-description">
+                    We are industry leaders specializing in comprehensive construction solutions, from warehouse construction to portable storage units and wholesale construction materials. With years of expertise and a commitment to quality, we deliver exceptional results that exceed expectations.
+                </p>
+                <a href="#contact" class="cta-button">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warehouse Construction Section -->
+    <section id="warehouses" class="section">
+        <div class="container">
+            <h2 class="section-title">Warehouse Construction</h2>
+            <div class="section-content">
+                <div class="section-text">
+                    <h3>Building the Future of Industrial Storage</h3>
+                    <p>Our warehouse construction division specializes in creating state-of-the-art industrial facilities that meet the demanding requirements of modern businesses. From concept to completion, we handle every aspect of warehouse development with precision and expertise.</p>
+                    <p>We utilize cutting-edge construction techniques and premium materials to ensure your warehouse stands the test of time. Our experienced team works closely with you to design and build facilities that optimize space utilization, enhance operational efficiency, and support your business growth.</p>
+                    <a href="#contact" class="quote-button">Get A Quote Now!</a>
+                </div>
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="bodega-fotos/bodega1.jpeg" alt="Custom Warehouses">
+                        <div class="slide-caption">
+                            <h4>Custom Warehouses</h4>
+                            <p>We construct warehouses of any size and style to fit your budget and specifications. Contact us for service and pricing</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="bodega-fotos/bodega2.jpeg" alt="Refrigeration Warehouses">
+                        <div class="slide-caption">
+                            <h4>Refrigeration Warehouses</h4>
+                            <p>Specialized in building cold storage and refrigeration warehouses</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="bodega-fotos/bodega3.jpeg" alt="Custom Fabrication & Design">
+                        <div class="slide-caption">
+                            <h4>Custom Fabrication & Design</h4>
+                            <p>We offer custom fabrication services based on your needs. Contact us for details</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="bodega-fotos/bodega4.jpeg" alt="Two-Story Structures">
+                        <div class="slide-caption">
+                            <h4>Two-Story Structures</h4>
+                            <p>Design and construction of two-story buildings with:</p>
+                            <ul>
+                                <li>Ground floor for parking and front-desk customer service</li>
+                                <li>Upper level for residential or office use</li>
+                                <li>Call for more information or custom requests</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="bodega-fotos/bodega5.jpeg" alt="Metal Roofing Installation">
+                        <div class="slide-caption">
+                            <h4>Metal Roofing Installation</h4>
+                            <p>Expert metal roofing services. Contact us for a personalized quote</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="bodega-fotos/bodega6.jpeg" alt="Commercial Plaza Construction">
+                        <div class="slide-caption">
+                            <h4>Commercial Plaza Construction</h4>
+                            <p>Custom-built commercial plazas tailored to your specific requirements</p>
+                        </div>
+                    </div>
+                    <a class="prev" onclick="changeSlide(-1, 'warehouses')">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1, 'warehouses')">&#10095;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storage Solutions Section -->
+    <section id="storage" class="section">
+        <div class="container">
+            <h2 class="section-title">Mobile Storage & Portable Offices</h2>
+            <div class="section-content">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="storage-fotos/oficina1.jpeg" alt="Portable Office">
+                        <div class="slide-caption">
+                            <h4>Portable Office (16' x 12')</h4>
+                            <p>Fully insulated portable office unit with:</p>
+                            <ul>
+                                <li>3 windows and a half bathroom</li>
+                                <li>Mini-split AC/Heater system</li>
+                                <li>Freight and on-site installation included</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="storage-fotos/oficina2.jpeg" alt="Portable Office Solutions">
+                        <div class="slide-caption">
+                            <h4>Portable Office Solutions</h4>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="storage-fotos/oficina3.jpeg" alt="Temporary Storage">
+                        <div class="slide-caption">
+                            <h4>Temporary Storage</h4>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="storage-fotos/oficina4.jpeg" alt="Carport Solutions">
+                        <div class="slide-caption">
+                            <h4>Carport Solutions</h4>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="storage-fotos/storage.jpeg" alt="A-Frame Storage Unit">
+                        <div class="slide-caption">
+                            <h4>A-Frame Storage Unit (10' x 16')</h4>
+                            <p>Durable portable storage with:</p>
+                            <ul>
+                                <li>Standard door and lock handle</li>
+                                <li>2 screen vents for airflow</li>
+                                <li>No windows</li>
+                                <li>5-year labor warranty</li>
+                                <li>Freight and installation included</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="storage-fotos/storage1.jpeg" alt="Barn-Style Storage Unit">
+                        <div class="slide-caption">
+                            <h4>Barn-Style Storage Unit (10' x 12')</h4>
+                            <p>Includes:</p>
+                            <ul>
+                                <li>Standard door with key lock handle</li>
+                                <li>One built-in shelf</li>
+                                <li>Dark gray with ivory trim</li>
+                                <li>Freight and installation included</li>
+                                <li>5-year labor warranty</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="prev" onclick="changeSlide(-1, 'storage')">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1, 'storage')">&#10095;</a>
+                </div>
+                <div class="section-text">
+                    <h3>Flexible Storage & Office Solutions</h3>
+                    <p>Our mobile storage and portable office solutions provide the flexibility your business needs. Whether you require temporary storage during a project, additional office space, or permanent carport installations, we have the perfect solution.</p>
+                    <p>All our storage units and portable offices are built with durable materials and designed for easy transport and setup. We offer various sizes and configurations to meet your specific requirements, ensuring you get exactly what you need when you need it.</p>
+                    <a href="#contact" class="quote-button">Get A Quote Now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wholesale Section -->
+    <section id="wholesale" class="wholesale-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Wholesale Construction Products</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                Premium construction materials and equipment at competitive wholesale prices
+            </p>
+            <div class="wholesale-grid">
+                <div class="wholesale-card">
+                    <h3>Building Materials</h3>
+                    <p>High-quality lumber, steel, concrete, and specialized construction materials sourced from trusted suppliers.</p>
+                </div>
+                <div class="wholesale-card">
+                    <h3>Construction Equipment</h3>
+                    <p>Professional-grade tools, machinery, and equipment for construction projects of any scale.</p>
+                </div>
+                <div class="wholesale-card">
+                    <h3>Safety Equipment</h3>
+                    <p>Complete range of safety gear and protective equipment to ensure workplace safety compliance.</p>
+                </div>
+                <div class="wholesale-card">
+                    <h3>Electrical & Plumbing</h3>
+                    <p>Comprehensive electrical and plumbing supplies for residential and commercial construction.</p>
+                </div>
+                <div class="wholesale-card">
+                    <h3>Insulation & Roofing</h3>
+                    <p>Energy-efficient insulation materials and durable roofing systems for optimal building performance.</p>
+                </div>
+                <div class="wholesale-card">
+                    <h3>Custom Orders</h3>
+                    <p>Specialized procurement services for unique project requirements and hard-to-find materials.</p>
+                </div>
+            </div>
+            <a href="#contact" class="wholesale-quote-button">Get A Quote Now!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>Ready to start your project?</p>
+                    <div class="contact-info">
+                        <p><strong>For questions or for a free quote contact us:</strong></p>
+                        <p><strong>Para preguntas o para una cotización gratuita contáctenos:</strong></p>
+                        <p>📞 956-328-4281</p>
+                        <p>📞 956-907-6632</p>
+                    </div>
+                    <p>Email: info@pgomagnebis.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <p>Warehouse Construction</p>
+                    <p>Mobile Storage Solutions</p>
+                    <p>Portable Offices</p>
+                    <p>Wholesale Construction Supplies</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Service Areas</h3>
+                    <p>Residential Construction</p>
+                    <p>Commercial Development</p>
+                    <p>Industrial Projects</p>
+                    <p>Emergency Solutions</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem;">
+                <p>&copy; 2025 PGO Magnebis Enterprises LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = {
+            warehouses: 1,
+            storage: 1
+        };
+
+        let slideIntervals = {};
+
+        function changeSlide(n, section) {
+            clearInterval(slideIntervals[section]);
+            showSlide(slideIndex[section] += n, section);
+            startAutoSlide(section);
+        }
+
+        function showSlide(n, section) {
+            let slides = document.querySelectorAll(`#${section} .slide`);
+            
+            if (n > slides.length) {slideIndex[section] = 1}
+            if (n < 1) {slideIndex[section] = slides.length}
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            
+            slides[slideIndex[section] - 1].classList.add('active');
+        }
+
+        function startAutoSlide(section) {
+            slideIntervals[section] = setInterval(() => {
+                slideIndex[section]++;
+                showSlide(slideIndex[section], section);
+            }, 5000);
+        }
+
+        // Initialize auto-advance slides every 5 seconds with delay
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a small delay to ensure DOM is fully loaded
+            setTimeout(() => {
+                startAutoSlide('warehouses');
+                startAutoSlide('storage');
+            }, 500);
+        });
+
+        // Pause auto-advance on hover
+        document.querySelectorAll('.slideshow-container').forEach(container => {
+            container.addEventListener('mouseenter', function() {
+                const section = this.closest('section').id;
+                clearInterval(slideIntervals[section]);
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                const section = this.closest('section').id;
+                startAutoSlide(section);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
