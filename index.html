@@ -26,13 +26,13 @@
             padding: 0 20px;
         }
 
-        /* Header - Modified for larger logo */
+        /* Header - Fixed for bigger logo and better blending */
         header {
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: white;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -49,16 +49,18 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .logo-image {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
-            mix-blend-mode: screen;
-            filter: brightness(1.2) contrast(1.1);
-            border-radius: 8px;
+            mix-blend-mode: lighten;
+            filter: brightness(1.5) contrast(1.3) saturate(1.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px;
         }
 
         .logo {
@@ -97,7 +99,7 @@
         .hero {
             background: linear-gradient(135deg, #0c4a6e 0%, #065f46 50%, #1e40af 100%);
             color: white;
-            padding: 140px 0 80px;
+            padding: 180px 0 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -501,8 +503,16 @@
             }
 
             .logo-image {
-                width: 50px;
-                height: 50px;
+                width: 80px;
+                height: 80px;
+            }
+
+            header {
+                padding: 1.5rem 0;
+            }
+
+            .hero {
+                padding: 160px 0 80px;
             }
         }
     </style>
@@ -556,28 +566,28 @@
                 </div>
                 <div class="slideshow-container">
                     <div class="slide active">
-                        <img src="bodega1.jpeg" alt="Custom Warehouses">
+                        <img src="bodega-fotos/bodega1.jpeg" alt="Custom Warehouses">
                         <div class="slide-caption">
                             <h4>Custom Warehouses</h4>
                             <p>We construct warehouses of any size and style to fit your budget and specifications. Contact us for service and pricing</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="bodega2.jpeg" alt="Refrigeration Warehouses">
+                        <img src="bodega-fotos/bodega2.jpeg" alt="Refrigeration Warehouses">
                         <div class="slide-caption">
                             <h4>Refrigeration Warehouses</h4>
                             <p>Specialized in building cold storage and refrigeration warehouses</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="bodega3.jpeg" alt="Custom Fabrication & Design">
+                        <img src="bodega-fotos/bodega3.jpeg" alt="Custom Fabrication & Design">
                         <div class="slide-caption">
                             <h4>Custom Fabrication & Design</h4>
                             <p>We offer custom fabrication services based on your needs. Contact us for details</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="bodega4.jpeg" alt="Two-Story Structures">
+                        <img src="bodega-fotos/bodega4.jpeg" alt="Two-Story Structures">
                         <div class="slide-caption">
                             <h4>Two-Story Structures</h4>
                             <p>Design and construction of two-story buildings with:</p>
@@ -589,14 +599,14 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="bodega5.jpeg" alt="Metal Roofing Installation">
+                        <img src="bodega-fotos/bodega5.jpeg" alt="Metal Roofing Installation">
                         <div class="slide-caption">
                             <h4>Metal Roofing Installation</h4>
                             <p>Expert metal roofing services. Contact us for a personalized quote</p>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="bodega6.jpeg" alt="Commercial Plaza Construction">
+                        <img src="bodega-fotos/bodega6.jpeg" alt="Commercial Plaza Construction">
                         <div class="slide-caption">
                             <h4>Commercial Plaza Construction</h4>
                             <p>Custom-built commercial plazas tailored to your specific requirements</p>
@@ -616,7 +626,7 @@
             <div class="section-content">
                 <div class="slideshow-container">
                     <div class="slide active">
-                        <img src="oficina1.jpeg" alt="Portable Office">
+                        <img src="storage-fotos/oficina1.jpeg" alt="Portable Office">
                         <div class="slide-caption">
                             <h4>Portable Office (16' x 12')</h4>
                             <p>Fully insulated portable office unit with:</p>
@@ -628,25 +638,25 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="oficina2.jpeg" alt="Portable Office Solutions">
+                        <img src="storage-fotos/oficina2.jpeg" alt="Portable Office Solutions">
                         <div class="slide-caption">
                             <h4>Portable Office Solutions</h4>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="oficina3.jpeg" alt="Temporary Storage">
+                        <img src="storage-fotos/oficina3.jpeg" alt="Temporary Storage">
                         <div class="slide-caption">
                             <h4>Temporary Storage</h4>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="oficina4.jpeg" alt="Carport Solutions">
+                        <img src="storage-fotos/oficina4.jpeg" alt="Carport Solutions">
                         <div class="slide-caption">
                             <h4>Carport Solutions</h4>
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="storage.jpeg" alt="A-Frame Storage Unit">
+                        <img src="storage-fotos/storage.jpeg" alt="A-Frame Storage Unit">
                         <div class="slide-caption">
                             <h4>A-Frame Storage Unit (10' x 16')</h4>
                             <p>Durable portable storage with:</p>
@@ -660,7 +670,7 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <img src="storage1.jpeg" alt="Barn-Style Storage Unit">
+                        <img src="storage-fotos/storage1.jpeg" alt="Barn-Style Storage Unit">
                         <div class="slide-caption">
                             <h4>Barn-Style Storage Unit (10' x 12')</h4>
                             <p>Includes:</p>
